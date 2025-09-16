@@ -1,39 +1,19 @@
 #include <stdio.h>
 
 int main() {
-	char numbers;
-	double num1, num2, result;
+    int arr[9] = {2, 7, 11, 15, 6, 3, 5, 4};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int k = 9;
+    int i, j;
 
-	printf("Enter an number (+, -, *, /): ");
-	scanf(" %c", &numbers);
-	printf("Enter two numbers: ");
-	scanf("%lf %lf", &num1, &num2);
+    printf("Pairs with sum %d are:\n", k);
+    for (i = 0; i < n - 1; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == k) {
+                printf("(%d, %d)\n", arr[i], arr[j]);
+            }
+        }
+    }
 
-	switch (numbers) {
-		case '+':
-			result = num1 + num2;
-			printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '-':
-			result = num1 - num2;
-			printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '*':
-			result = num1 * num2;
-			printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '/':
-			if (num2 != 0)
-				result = num1 / num2;
-			else {
-				printf("Error! Division by zero.\n");
-				return 1;
-			}
-			printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		default:
-			printf("Error! Operator is not correct\n");
-	}
-
-	return 0;
+    return 0;
 }
