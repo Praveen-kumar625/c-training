@@ -1,19 +1,13 @@
-#include <stdio.h>
-
-int main() {
-    int arr[9] = {2, 7, 11, 15, 6, 3, 5, 4};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    int k = 9;
-    int i, j;
-
-    printf("Pairs with sum %d are:\n", k);
-    for (i = 0; i < n - 1; i++) {
-        for (j = i + 1; j < n; j++) {
-            if (arr[i] + arr[j] == k) {
-                printf("(%d, %d)\n", arr[i], arr[j]);
-            }
-        }
-    }
-
-    return 0;
+#include<stdio.h>
+int main(){
+int a[5]={1,2,9,3,4},i,j,t;
+for(i=0;i<4;i++)
+for(j=0;j<4-i;j++)
+if(a[j]>a[j+1]){
+t=a[j];
+a[j]=a[j+1];
+a[j+1]=t;
+}
+for(i=0;i<5;i++)printf("%d ",a[i]);
+return 0;
 }
