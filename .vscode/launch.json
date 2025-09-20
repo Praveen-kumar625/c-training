@@ -2,6 +2,43 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "C#: <project-name> Debug",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    },
+    {
+      "name": ".NET Core Launch (web)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "serverReadyAction": {
+        "action": "openExternally",
+        "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/Views"
+      }
+    },
+    {
+      "name": "C#: <project-name> Debug",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}/<relative-path-to-project-folder><project-name>.csproj"
+    },
+    {
       "name": "(gdb) Bash on Windows Launch",
       "type": "cppdbg",
       "request": "launch",
@@ -14,23 +51,24 @@
       "pipeTransport": {
         "debuggerPath": "/usr/bin/gdb",
         "pipeProgram": "${env:windir}\\system32\\bash.exe",
-        "pipeArgs": ["-c"],
+        "pipeArgs": [
+          "-c"
+        ],
         "pipeCwd": ""
       },
       "setupCommands": [
-          {
-              "description": "Enable pretty-printing for gdb",
-              "text": "-enable-pretty-printing",
-              "ignoreFailures": true
-          },
-          {
-              "description": "Set Disassembly Flavor to Intel",
-              "text": "-gdb-set disassembly-flavor intel",
-              "ignoreFailures": true
-          }
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        },
+        {
+          "description": "Set Disassembly Flavor to Intel",
+          "text": "-gdb-set disassembly-flavor intel",
+          "ignoreFailures": true
+        }
       ]
     },
-    
     {
       "name": ".NET Core Launch (console)",
       "type": "coreclr",
@@ -42,7 +80,6 @@
       "stopAtEntry": false,
       "console": "internalConsole"
     },
-
     {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
@@ -50,8 +87,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/praveen/Desktop/new",
-      "program": "c:/Users/praveen/Desktop/new/build/Debug/outDebug",
+      "cwd": "c:/Users/praveen/OneDrive/Desktop/new",
+      "program": "c:/Users/praveen/OneDrive/Desktop/new/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
