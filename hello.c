@@ -1,39 +1,13 @@
-#include <stdio.h>
-
-int main() {
-	char numbers;
-	double num1, num2, result;
-
-	printf("Enter an number (+, -, *, /): ");
-	scanf(" %c", &numbers);
-	printf("Enter two numbers: ");
-	scanf("%lf %lf", &num1, &num2);
-
-	switch (numbers) {
-		case '+':
-			result = num1 + num2;
-			printf("%.2lf + %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '-':
-			result = num1 - num2;
-			printf("%.2lf - %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '*':
-			result = num1 * num2;
-			printf("%.2lf * %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		case '/':
-			if (num2 != 0)
-				result = num1 / num2;
-			else {
-				printf("Error! Division by zero.\n");
-				return 1;
-			}
-			printf("%.2lf / %.2lf = %.2lf\n", num1, num2, result);
-			break;
-		default:
-			printf("Error! Operator is not correct\n");
-	}
-
-	return 0;
+#include<stdio.h>
+int main(){
+int a[5]={1,2,9,3,4},i,j,t;
+for(i=0;i<4;i++)
+for(j=0;j<4-i;j++)
+if(a[j]>a[j+1]){
+t=a[j];
+a[j]=a[j+1];
+a[j+1]=t;
+}
+for(i=0;i<5;i++)printf("%d ",a[i]);
+return 0;
 }
